@@ -2,24 +2,103 @@
 
 <dom-module id="bloombox-profile">
   <template>
-    <style>
+    <style is="custom-style" include="bloombox-styles">
       :host {
         display: block;
       }
+
+      :host paper-card.profile-card {
+        min-width: 650px
+      };
     </style>
-    <h2>Hello [[prop1]]</h2>
+
+    <div class="card-section profile-cards">
+      <paper-card heading="Information" class="profile-card partner-info fullwidth">
+        <div class="card-content fullwidth">
+          <b>information</b>
+        </div><!-- div.card-content.fullwidth -->
+      </paper-card><!-- end paper-card.partner-info -->
+
+      <paper-card heading="Branding" class="profile-card partner-branding fullwidth">
+        <div class="card-content">
+          <b>branding</b>
+        </div><!-- div.card-content.fullwidth -->
+      </paper-card><!-- end paper-card.partner-branding -->
+
+      <paper-card heading="Capabilities" class="profile-card partner-capabilities fullwidth">
+        <div class="card-content">
+          <b>capabilities</b>
+        </div><!-- div.card-content.fullwidth -->
+      </paper-card><!-- end paper-card.partner-capabilities -->
+
+      <paper-card heading="Social" class="profile-card partner-social fullwidth">
+        <div class="card-content fullwidth">
+          <b>social</b>
+        </div><!-- div.card-content.fullwidth -->
+      </paper-card><!-- end paper-card.partner-social -->
+    </div><!-- end div.profile-section.profile-cards -->
   </template>
 
   <script>
-    Polymer({
-
+    Polymer.BloomboxProfile = Polymer({
       is: 'bloombox-profile',
 
       properties: {
-        prop1: {
+        /**
+         * Short string uniquely identifying the partner for which we are displaying
+         * location profile views and editors.
+         */
+        key: {
           type: String,
-          value: 'bloombox-profile',
+          notify: true,
+          reflectToAttribute: true
         },
+
+        /**
+         * Human-formatted label for the current partner for which we are displaying
+         * location profile views and editors. Used in the top masthead of the view.
+         */
+        label: {
+          type: String,
+          notify: true,
+          reflectToAttribute: true
+        },
+
+        /**
+         * Array of `location` objects (provided by the server) that can/should have
+         * profiles for viewing/editing under the current partner.
+         */
+        locations: {
+          type: Array,
+          notify: true,
+          reflectToAttribute: true
+        },
+
+        /**
+         * Settings for location profiles, for binding upwards/downwards to/from
+         * persistence components.
+         */
+        persisted: {
+          type: Object,
+          notify: true
+        },
+
+        /**
+         * Profile object for the currently-selected location, or a default profile
+         * structure if none yet exists in underlying persistence.
+         */
+        profile: {
+          type: Object,
+          notify: true,
+          value: function() {
+            // load default profile if none is persisted
+            var data = this.get("persisted");
+            if (data == null || data === undefined || (Array.isArray(data) && data.length == 0)) {
+              return bloom.util.defaultProfile();
+            }
+            return data;
+          }
+        }
       },
 
     });
