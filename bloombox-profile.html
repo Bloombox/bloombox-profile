@@ -1,0 +1,27 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="bloombox-profile">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'bloombox-profile',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'bloombox-profile',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
