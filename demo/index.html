@@ -12,18 +12,22 @@
     <link rel="import" href="../bloombox-profile.html">
 
     <style is="custom-style" include="demo-pages-shared-styles">
+      .vertical-section-container.centered {
+        max-width: 700px !important;
+      }
     </style>
   </head>
   <body>
-
     <div class="vertical-section-container centered">
-      <h3>Basic bloombox-profile Demo</h3>
+      <h3>Location profile</h3>
       <demo-snippet>
         <template>
-          <bloombox-profile></bloombox-profile>
+          <bloombox-profile
+            key='abatin'
+            label='Abatin Wellness'
+            locations='[{"phone":"+19163419482","address":{"zip":"95811","address":"1108 R Street #403","state":"CA","longitude":null,"latitude":null,"city":"Sacramento"},"website":"abatinsacramento.com","label":"Sacramento","key":"sacramento"},{"phone":"+1235551234","address":{"zip":"12345","address":"123 Main Street #100","state":"CA","longitude":null,"latitude":null,"city":"Los Angeles"},"website":"abatinla.com","label":"Los Angeles","key":"los-angeles"},{"phone":"+1235551234","address":{"zip":"12345","address":"123 Main Street #100","state":"CA","longitude":null,"latitude":null,"city":"Oakland"},"website":"abatinoakland.com","label":"Oakland","key":"oakland"}]'></bloombox-profile>
         </template>
       </demo-snippet>
     </div>
-
   </body>
 </html>
