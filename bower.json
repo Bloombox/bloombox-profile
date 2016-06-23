@@ -3,7 +3,9 @@
   "description": "Provides display and edit UI for partner location profiles.",
   "main": "bloombox-profile.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.4.0"
+    "polymer": "Polymer/polymer#^1.5.0",
+    "paper-card": "PolymerElements/paper-card#^1.1.1",
+    "bloombox-styles": "git@github.com:bloombox/bloombox-styles.git#master"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
