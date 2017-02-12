@@ -1,4 +1,7 @@
-dist/
-node_modules/
-bower_components/
 target/
+bower_components/
+node_modules/
+dist/
+components/*.tar.gz
+*.tar.gz
+components/
