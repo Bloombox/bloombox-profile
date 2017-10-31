@@ -6,7 +6,7 @@
   "dependencies": {
     "polymer": "Polymer/polymer#^1.7.0",
     "paper-card": "PolymerElements/paper-card#^1.1.1",
-    "bloombox-styles": "Bloombox/bloombox-styles"
+    "bloombox-styles": "git@github.com:Bloombox/bloombox-styles.git"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
